@@ -1,0 +1,76 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="utf8">
+
+    <script>
+
+        /* 
+    
+            Agência : Divulga Tudo
+            Programa: Gerenciamento de Anuncios Online
+            Data    : 04/05/2021
+            Autor   : Jieff Cavalcanti Neves
+            Contato : 47 97400-2478
+            E-mail  : jieff.cavalcanti@gmail.com
+    
+       */
+
+
+        function projecao() {
+
+            //pega o valor do investimento digitado pelo cliente
+            var campo = document.getElementById("campo");
+
+            //pegar o valor investido, e retorona a quantidade de anuncios ainda não compartilhados
+            var numAnuncios = campo.value * 30
+
+            //pega a quantidade de anuncios e retorna a quantidade de cliques
+            var numCliques = Math.round(numAnuncios * 0.12)
+
+            //pega a quantidade de cliques e retorna a quantidade de compartilhamentos
+            var numCompart = Math.round(numCliques * 0.15)
+
+            /*  
+                pega a quantidade de compartilhamento 
+                incrementa 40 novas visualizaçoes para cada compartilhamento
+                durante 4 fases
+            */
+            var fase1 = numCompart * 40
+            var fase2 = fase1 * 40
+            var fase3 = fase2 * 40
+            var fase4 = fase3 * 40
+            var fases = fase1 + fase2 + fase3 + fase4
+            var soma = fases + campo.value
+
+
+            //Saidas
+            console.log("VISUALIZAÇÕES: " + numAnuncios)
+            console.log("CLIQUES: " + numCliques)
+            console.log("COMPARTILHAMENTOS: " + numCompart)
+            console.log("FASE 1: " + fase1)
+            console.log("FASE 2: " + fase2)
+            console.log("FASE 3: " + fase3)
+            console.log("FASE 4: " + fase4)
+            console.log("PROJEÇÃO MÁXIMA DE VISUALIZAÇÕES: " + soma)
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <h2>Agência Divulga Tudo | Gerenciamento de Anuncios Online </h2>
+    <hr>
+    <label>DIGITE O VALOR A SER INVESTIDO :</label><br>
+    <input type="text" id="campo" />
+    <button onclick="projecao()">PROJEÇÃO</button>
+
+
+
+</body>
+
+</html>
